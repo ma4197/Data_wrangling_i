@@ -59,5 +59,29 @@ lotr_words_df = read_excel("data/LotR_Words.xlsx", range = "B3:D6")
 Read in SAS Dataset
 
 ```{r}
+library(haven)
+```
 
+```{r}
+pulse_data = read_sas ("data/public_pulse_data.sas7bdat")
+```
+
+```{r, eval = FALSE}
+View(pulse_data)
+```
+
+## Data Export
+
+```{r}
+write_csv(lotr_words_df, file = "data/lotr_words_df.csv")
+```
+
+```{r}
+write_csv(lotr_words_df, file = "results/lotr_words_df.csv")
+```
+
+
+## Why not base R??
+```{r}
+dont_do_this_df = read.csv("data/FAS_litters.csv")
 ```
